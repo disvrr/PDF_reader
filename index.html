@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зчитувач стипендіального рейтингу ХНУРЕ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="decorations">
+        <img src="pdf_img.avif" class="decor img1">
+        <img src="pdf_img.avif" class="decor img2">
+        <img src="pdf_img.avif" class="decor img3">
+        <img src="pdf_img.avif" class="decor img4">
+        <img src="pdf_img.avif" class="decor img5">
+        <img src="pdf_img.avif" class="decor img6">
+        <img src="pdf_img.avif" class="decor img7">
+        <img src="pdf_img.avif" class="decor img8">
+        <img src="pdf_img.avif" class="decor img9">
+        <img src="pdf_img.avif" class="decor img10">
+        <img src="pdf_img.avif" class="decor img11">
+        <img src="pdf_img.avif" class="decor img12">
+    </div>
+    </div>
+    <main class="container">
+        <header>
+            <h1>Зчитувач PDF</h1>
+            <p>Стипендіальний рейтинг студентів ХНУРЕ</p>
+            <a href="https://nure.ua/studentam/stipendialniy-reyting" target="_blank" rel="noopener noreferrer">
+                Офіційна сторінка рейтингу
+            </a>
+        </header>
+
+        <section class="upload-card">
+            <label for="pdfFile">Оберіть PDF-файл:</label>
+            <input type="file" id="pdfFile" accept=".pdf,application/pdf">
+            <p id="status" role="status">Очікування файлу...</p>
+        </section>
+
+        <section class="results">
+            <div class="table-header">
+                <h2>Рейтинг студентів</h2>
+                <span id="count">Записів: 0</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="no">№</th>
+                            <th id="full_name">П.І.Б.</th>
+                            <th id="rait">Рейтинг загальний</th>
+                            <th id="group">Група</th>
+                            <th id="add">Додаткова інформація</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="5" class="empty">
+                                Завантажте PDF-файл
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
