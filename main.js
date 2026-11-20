@@ -59,13 +59,11 @@ fileInput.addEventListener('change', async (event) => {
 async function readPdf(pdf) {
   const records = [];
 
-  // 3. Обрабатываем каждую страницу. 
   for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
 
     const page = await pdf.getPage(pageNumber);
     const content = await page.getTextContent();
 
-    // Group text fragments by their vertical position.
     const lines = new Map();
 
     for (const item of content.items) {
@@ -89,11 +87,11 @@ async function readPdf(pdf) {
       });
     }
 
-    // Sort lines from top to bottom.
+    // Sort lines
     const sortedLines = [...lines.entries()].sort((a, b) => b[0] - a[0]);
 
     for (const [, fragments] of sortedLines) {
-      // Sort fragments from left to right.
+      // Sort fragments
       fragments.sort((a, b) => a.x - b.x);
 
       const text = fragments
@@ -121,7 +119,7 @@ async function readPdf(pdf) {
   return records;
 }
 
-// Build table safely without inserting PDF text as HTML.
+// Build table
 function buildTable(records) {
   const fragment = document.createDocumentFragment();
 
